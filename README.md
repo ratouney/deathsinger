@@ -2,8 +2,7 @@
 
 ## Why ?
 
-A certain LoL personality had a justified obscession with the importance of drafting 
-in the success of a League match. I wanted to analyse this idea and apply it not only
+A [certain LoL personality](https://twitter.com/LSXYZ9) had a justified obscession with the importance of drafting. Following a [long stream discussion with a MagicTheGathering pro](https://www.youtube.com/watch?v=Qj3JV5CeLBk&t=4807s), they tried to determine how you would represent it's color coding in League of Legends. I wanted to analyse this idea and apply it not only
 to pro play but to every single ELO bracket.
 
 
