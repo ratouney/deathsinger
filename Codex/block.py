@@ -16,6 +16,7 @@ class Block:
             self.connector = link
             self.session = link.getSession()
         self.blockType = blockType
+
         self.unitName = l
     
     def setId(self, id):

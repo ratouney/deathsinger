@@ -1,5 +1,5 @@
 import logging
-from regions import Region, Continents
+from .regions import Region, Continents
 
 class Match:
     def __init__(self, matchId, givenRegion = Continents.EUR, givenApi=None, load=False):

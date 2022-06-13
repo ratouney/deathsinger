@@ -1,5 +1,5 @@
 import logging
-from regions import Region
+from .regions import Region
 
 class Account:
     def __init__(self, params, link = None, givenRegion = Region.EUW) -> None:

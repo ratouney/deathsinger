@@ -1,0 +1,237 @@
+{
+    "aatrox": {
+        "main": "red",
+        "off": "black",
+        "scales": [80, 0, 0, 0, 20]
+    },
+    "ahri":{
+        "main": ["red", "black"],
+        "off": ["green"],
+        "scales": [60, 10, 0, 0, 30]
+    },
+    "akali":{
+        "main": "red",
+        "off": "blue",
+        "scales": [70, 0, 20, 0, 10]
+    },
+    "alistar":{
+        "main": "red",
+        "off": ["white", "green"],
+        "scales": [60, 20, 0, 20, 0]
+     },
+    "amumu":{
+        "main": ["blue", "green"],
+        "off": ["white", "black"],
+        "scales": [0, 30, 40, 20, 10]
+    },
+    "anivia":{
+        "main": ["red", "blue"],
+        "off": "white",
+        "scales": [50, 0, 30, 20, 0]
+    },
+    "annie":{
+        "main": ["red", "white"],
+        "off": "blue",
+        "scales": [60, 0, 30, 10, 0]
+    },
+    "aphelios":{
+        "main": "blue",
+        "off": "black",
+        "scales": [0, 0, 70, 0, 30]
+    },
+    "ashe":{
+        "main": ["green", "blue", "black"],
+        "off": ["red", "white"],
+        "scales": [10, 20, 50, 10, 20]
+    },
+    "aurelion sol":{
+        "main": ["red", "green"],
+        "off": ["white"],
+        "scales": [50, 20, 0, 30, 0]
+    },
+    "azir":{
+        "main": "blue",
+        "off": "red",
+        "scales": [30, 0, 70, 0, 0]
+    },
+    "bard":{
+        "main": ["white", "green", "blue"],
+        "off": "red",
+        "scales": [10, 20, 30, 50, 0]
+    },
+    "blitzcrank":{
+        "main": ["blue", "black"],
+        "off": "white",
+        "scales": [0, 0, 30, 20, 50]
+    },
+    "brand":{
+        "main": "red",
+        "off": ["green"],
+        "scales": [80, 20, 0, 0, 0]
+    },
+    "braum":{
+        "main": ["blue", "white"],
+        "off": ["red", "green"],
+        "scales": [10, 10, 50, 30, 0]
+    },
+    "caitlyn":{
+        "main": ["blue", "green"],
+        "off": "red",
+        "scales": [20, 30, 50, 0, 0]
+    },
+    "camille":{
+        "main": "blue",
+        "off": "black",
+        "scales": [0, 0, 60, 0, 40]
+    },
+    "cassiopeia":{
+        "main": "green",
+        "off": "blue",
+        "scales": [0, 60, 40, 0, 0]
+    },
+    "chogath":{
+        "main": ["blue", "black"],
+        "off": "green",
+        "scales": [0, 20, 50, 0, 30]
+    },
+    "corki":{
+        "main": "green",
+        "off": "black",
+        "scales": [0, 70, 0, 0, 30]
+    },
+    "darius":{
+        "main": "black",
+        "off": "red",
+        "scales": [30, 0, 0, 0, 60]
+    },
+    "diana":{
+        "main": ["green", "black"],
+        "off": "white",
+        "scales": [0, 50, 0, 30, 20]
+    },
+    "dr mundo":{
+        "main": ["black", "green"],
+        "off": "red",
+        "scales": [20, 40, 0, 0, 40]
+    },
+    "draven":{
+        "main": ["red", "black"],
+        "off": "green",
+        "scales": [60, 10, 0, 0, 30]
+    },
+    "ekko":{
+        "main": ["blue", "red"],
+        "off": "green",
+        "scales": [35, 25, 40, 0, 0]
+    },
+    "elise":{
+        "main": ["red", "white"],
+        "off": "black",
+        "scales": [50, 0, 0, 30, 20]
+    },
+    "evelynn":{
+        "main": "blue",
+        "off": "black",
+        "scales": [0, 0, 80, 0, 20]
+    },
+    "ezreal":{
+        "main": "green",
+        "off": ["blue", "white"],
+        "scales": [0, 50, 30, 20, 0]
+    },
+    "fiddlesticks":{
+        "main": "blue",
+        "off": ["black", "red"],
+        "scales": [10, 0, 70, 0, 20]
+    },
+    "fiora":{
+        "main": ["black", "green"],
+        "off": "red",
+        "scales": [20, 50, 0, 0, 30]
+    },
+    "fizz":{
+        "main": "red",
+        "off": "green",
+        "scales": [70, 30, 0, 0, 0]
+    },
+    "gallio":{
+        "main": ["blue", "black"],
+        "off": "green",
+        "scales": [0, 20, 40, 0, 40]
+    },
+    "gangplank":{
+        "main": ["blue", "green", "white"],
+        "off": ["black", "red"],
+        "scales": [15, 30, 30, 25, 0]
+    },
+    "garen":{
+        "main": "red",
+        "off": "green",
+        "scales": [70, 30, 0, 0, 0]
+    },
+    "gnar":{
+        "main": "red",
+        "off": "blue",
+        "scales": [65, 0, 35, 0, 0]
+    },
+    "gragas":{
+        "main": "white",
+        "off": "blue",
+        "scales": [0, 0, 20, 80, 0]
+    },
+    "graves":{
+        "main": ["green", "white"],
+        "off": "red",
+        "scales": [20, 40, 0, 40, 0]
+    },
+    "hecarim":{
+        "main": "red",
+        "off": "green",
+        "scales": [70, 30, 0, 0, 0]
+    },
+    "heimerdinger":{
+        "main": "blue",
+        "off": "white",
+        "scales": [0, 0, 65, 35, 0]
+    },
+    "illaoi":{
+        "main": "black",
+        "off": ["green", "blue"],
+        "scales": [0, 30, 20, 0, 50]
+    },
+    "irelia":{
+        "main": "red",
+        "off": "green",
+        "scales": [70, 30, 0, 0, 0]
+    },
+    "ivern":{
+        "main": "green",
+        "off": ["blue", "white"],
+        "scales": [0, 50, 30, 20, 0]
+    },
+    "janna":{
+        "main": ["red", "green"],
+        "off": "blue",
+        "scales": [30, 40, 30, 0, 0]
+    },
+    "jarvan":{
+        "main": "red",
+        "off": "white",
+        "scales": [50, 0, 0, 50, 0]
+    },
+    "jax":{
+        "main": "green",
+        "off": "black",
+        "scales": [0, 80, 0, 0, 20]
+    },
+    "jayce":{
+        "main": "red",
+        "off": "green",
+        "scales": [70, 30, 0, 0, 0]
+    },
+    "jhin":{
+        "main": "",
+        "off": ,
+        "scales": [0, 0, 0, 0, 0]
+    }
+}

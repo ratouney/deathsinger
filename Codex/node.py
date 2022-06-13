@@ -16,7 +16,7 @@ class Node:
             self.session = link.getSession()
         self.unitName = blockType[0].lower()
         self.id = id
-        self.rawData = None
+        self.rawData = {}
     
     def __getitem__(self, key:str):
         return self.rawData[key]
@@ -87,6 +87,10 @@ class Node:
         print(rt)
 
         return True
+
+    def linkMatch(self, otherType:str, otherId:int, label:str):
+        n = self.connector.getNode(otherType, otherId)
+        return self.link(n, label)
 
     def link(self, otherNode, label:str):
         if not otherNode.isNodeClass:

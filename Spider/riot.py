@@ -1,14 +1,13 @@
-from email.mime import base
-from account import Account
-from match import Match
-from regions import Region, Continents
+from .account import Account
+from .match import Match
+from .regions import Region, Continents
 import requests
 import logging
 
 class RiotApi:
     def __init__(self, defaultRegion = Region.EUW) -> None:
         #Load apikey from file 
-        self.apikey = open("token", "r").read()
+        self.apikey = open("riotApiToken", "r").read()
         self.defaultRegion = defaultRegion
         self.headers = {"X-Riot-Token": self.apikey}
 

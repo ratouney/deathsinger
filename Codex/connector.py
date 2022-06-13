@@ -1,4 +1,5 @@
 from neo4j import GraphDatabase, work
+from numpy import block
 
 from .node import Node
 from .block import Block
@@ -37,6 +38,34 @@ class Connector:
         n = Node(blockType, id, self)
         n.sync()
         return n
+
+    def createNode(self, blockType:str, id:int, **kwargs):
+        unitName = blockType[0].lower()
+        q = 'CREATE (' + unitName + ':' + blockType + ' {id:' + str(id) + '})\n'
+        q += 'RETURN ' + unitName
+
+        rt = self.query(q)
+        print("CreateNodeRT : ", rt)
+
+        if len(rt) > 0:
+            n = Node(blockType, id, self)
+            for k in kwargs:
+                n[k] = kwargs[k]
+            n.commit()
+            return n
+        else:
+            return None
+
+    def deleteNode(self, blockType:str, id:int, detach:bool = True):
+        unitName = blockType[0].lower()
+        q = 'MATCH (' + unitName + ':' + blockType + ' {id:' + str(id) + '})\n'
+        if detach:
+            q += 'DETACH DELETE {unitName}'
+        else:
+            q += 'DELETE {unitName}'
+        q += 'RETURN ' + unitName
+
+        rt = self.query(q)
 
     def close(self):
         self.driver.close()
