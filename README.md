@@ -11,11 +11,11 @@ to pro play but to every single ELO bracket.
 ## How ?
 
 In the card game Magic the Gathering, all cards are split into 5 colors :
-- Red
-- Blue
-- Green
-- White
-- Black
+- <span style="color:red;background:#B1B1B1">Red</span>
+- <span style="color:blue;background:#B1B1B1">Blue</span>
+- <span style="color:green;background:#B1B1B1">Green</span>
+- <span style="color:white;background:#B1B1B1">White</span>
+- <span style="color:black;background:#B1B1B1">Black</span>
 
 Depending on that color, the card belongs to a certain archetype or strategic familly of options. It can also have multiple colors.
 
@@ -23,14 +23,12 @@ The goal of this analysis is to attribute a color to each champion in League of 
 
 To do this, colors have been "simplified" to these criteria :
 
+| Color | Description |
+| --- | --- |
 | Red | Aggressive, early game, requires snowball |
-
 | Blue | Terrain control, denial |
-
 | Green | Scaling, requires ressources or provides them |
-
 | White | Fluid, reinforces team color |
-
 | Black | Conditional, Quest System |
 
 Now, with 5 champions on every team, we would build a "chromatic scale" to each and determine the dominant color of each. Then using the statistics of each game, be it early game advantages, midgame objectives and ultimately the win, we would try to determine which strategy has the highest succcess chance.
