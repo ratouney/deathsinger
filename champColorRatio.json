@@ -102,7 +102,7 @@
     "darius":{
         "main": "black",
         "off": "red",
-        "scales": [30, 0, 0, 0, 60]
+        "scales": [60, 0, 0, 0, 40]
     },
     "diana":{
         "main": ["green", "black"],
@@ -230,8 +230,514 @@
         "scales": [70, 30, 0, 0, 0]
     },
     "jhin":{
-        "main": "",
-        "off": ,
+        "main": "blue",
+        "off": null,
+        "scales": [0, 0, 100, 0, 0]
+    },
+    "jinx":{
+        "main": "green",
+        "off": "white",
+        "scales": [0, 70, 0, 30, 0]
+    },
+    "kaisa":{
+        "main": "green",
+        "off": ["red", "black"],
+        "scales": [20, 60, 0, 0, 20]
+    },
+    "kalista":{
+        "main": "red",
+        "off": ["green"],
+        "scales": [70, 30, 0, 0, 0]
+    },
+    "karma":{
+        "main": "green",
+        "off": "blue",
+        "scales": [0, 80, 20, 0, 0]
+    },
+    "karthus":{
+        "main": ["blue", "black"],
+        "off": "green",
+        "scales": [0, 20, 20, 0, 60]
+    },
+    "kassadin":{
+        "main": "green",
+        "off": "blue",
+        "scales": [0, 60, 40, 0, 0]
+    },
+    "katarina":{
+        "main": ["red", "black"],
+        "off": "green",
+        "scales": [60, 15, 0, 0, 25]
+    },
+    "kayle":{
+        "main": "green",
+        "off": "white",
+        "scales": [0, 70, 0, 30, 0]
+    },
+    "kayn":{
+        "main": ["blue", "black"],
+        "off": "red",
+        "scales": [30, 0, 40, 0, 30]
+    },
+    "kennen":{
+        "main": "red",
+        "off": "green",
+        "scales": [60, 40, 0, 0, 0]
+    },
+    "khazix":{
+        "main": "blue",
+        "off": "green",
+        "scales": [0, 30, 70, 0, 0]
+    },
+    "kindred":{
+        "main": ["blue", "white"],
+        "off": "black",
+        "scales": [0, 0, 50, 30, 20]
+    },
+    "kled":{
+        "main": "red",
+        "off": "white",
+        "scales": [80, 0, 0, 20, 0]
+    },
+    "kogmaw":{
+        "main": "green",
+        "off": "white",
+        "scales": [0, 30, 0, 70, 0]
+    },
+    "leblanc":{
+        "main": "red",
+        "off": null,
+        "scales": [100, 0, 0, 0, 0]
+    },
+    "leesin":{
+        "main": "red",
+        "off": "white",
         "scales": [0, 0, 0, 0, 0]
+    },
+    "leona":{
+        "main": ["blue", "white"],
+        "off": "red",
+        "scales": [20, 0, 60, 20, 0]
+    },
+    "lissandra":{
+        "main": ["green", "blue", "white"],
+        "off": null,
+        "scales": [0, 30, 35, 35, 0]
+    },
+    "lucian":{
+        "main": ["red", "green"],
+        "off": "blue",
+        "scales": [40, 40, 20, 0, 0]
+    },
+    "lulu":{
+        "main": "green",
+        "off": "white",
+        "scales": [0, 40, 0, 60, 0]
+    },
+    "lux":{
+        "main": ["green", "blue"],
+        "off": "white",
+        "scales": [0, 40, 40, 20, 0]
+    },
+    "malphite":{
+        "main": ["green", "black"],
+        "off": "blue",
+        "scales": [0, 40, 40, 20, 0]
+    },
+    "malzahar":{
+        "main": "blue",
+        "off": "green",
+        "scales": [0, 30, 70, 0, 0]
+    },
+    "maokai":{
+        "main": ["blue", "green"],
+        "off": "black",
+        "scales": [0, 40, 40, 0, 20]
+    },
+    "masteryi":{
+        "main": "green",
+        "off": "white",
+        "scales": [0, 60, 0, 40, 0]
+    },
+    "missfortune":{
+        "main": ["red", "white"],
+        "off": null,
+        "scales": [20, 0, 20, 60, 0]
+    },
+    "mordekaiser":{
+        "main": "green",
+        "off": "black",
+        "scales": [0, 80, 0, 0, 20]
+    },
+    "morgana":{
+        "main": "blue",
+        "off": "black",
+        "scales": [0, 0, 70, 0, 30]
+    },
+    "nami":{
+        "main": "blue",
+        "off": "white",
+        "scales": [0, 0, 70, 30, 0]
+    },
+    "nasus":{
+        "main": "green",
+        "off": ["black", "red"],
+        "scales": [20, 50, 0, 0, 30]
+    },
+    "nautilus":{
+        "main": "blue",
+        "off": "white",
+        "scales": [0, 0, 80, 20, 0]
+    },
+    "neeko":{
+        "main": ["red", "blue"],
+        "off": null,
+        "scales": [40, 0, 60, 0, 0]
+    },
+    "nidalee":{
+        "main": "red",
+        "off": "white",
+        "scales": [70, 0, 0, 30, 0]
+    },
+    "nocturne":{
+        "main": "green",
+        "off": "red",
+        "scales": [40, 60, 0, 0, 0]
+    },
+    "nunu&willump":{
+        "main": "blue",
+        "off": "white",
+        "scales": [0, 60, 0, 40, 0]
+    },
+    "olaf":{
+        "main": "red",
+        "off": "green",
+        "scales": [80, 20, 0, 0, 0]
+    },
+    "orianna":{
+        "main": "blue",
+        "off": "white",
+        "scales": [0, 0, 50, 50, 0]
+    },
+    "ornn":{
+        "main": ["green", "blue", "white"],
+        "off": null,
+        "scales": [0, 40, 30, 30, 0]
+    },
+    "pantheon":{
+        "main": "red",
+        "off": "white",
+        "scales": [40, 0, 0, 60, 0]
+    },
+    "poppy":{
+        "main": "blue",
+        "off": "white",
+        "scales": [0, 0, 40, 60, 0]
+    },
+    "pyke":{
+        "main": ["red", "black"],
+        "off": "blue",
+        "scales": [40, 0, 30, 0, 30]
+    },
+    "qiyana":{
+        "main": "red",
+        "off": "white",
+        "scales": [80, 0, 0, 20, 0]
+    },
+    "quinn":{
+        "main": ["red", "blue"],
+        "off": null,
+        "scales": [70, 0, 30, 0, 0]
+    },
+    "rakan":{
+        "main": ["red", "white"],
+        "off": "blue",
+        "scales": [40, 0, 20, 40, 0]
+    },
+    "rammus":{
+        "main": ["blue", "black"],
+        "off": "green",
+        "scales": [0, 20, 30, 0, 50]
+    },
+    "reksai":{
+        "main": "red",
+        "off": "blue",
+        "scales": [80, 0, 20, 0, 0]
+    },
+    "renekton":{
+        "main": "red",
+        "off": null,
+        "scales": [100, 0, 0, 0, 0]
+    },
+    "rengar":{
+        "main": "red",
+        "off": "green",
+        "scales": [70, 30, 0, 0, 0]
+    },
+    "riven":{
+        "main": ["green", "blue"],
+        "off": "white",
+        "scales": [0, 40, 30, 30, 0]
+    },
+    "rumble":{
+        "main": "red",
+        "off": "blue",
+        "scales": [70, 0, 30, 0, 0]
+    },
+    "ryze":{
+        "main": "blue",
+        "off": "green",
+        "scales": [0, 30, 70, 0, 0]
+    },
+    "sejuani":{
+        "main": "blue",
+        "off": "white",
+        "scales": [0, 0, 50, 50, 0]
+    },
+    "senna":{
+        "main": ["blue", "black"],
+        "off": ["green", "white"],
+        "scales": [0, 15, 40, 15, 30]
+    },
+    "sett":{
+        "main": "red",
+        "off": "white",
+        "scales": [60, 0, 0, 40, 0]
+    },
+    "shaco":{
+        "main": "red",
+        "off": ["green", "blue"],
+        "scales": [60, 20, 20, 0, 0]
+    },
+    "shen":{
+        "main": ["green", "white"],
+        "off": "blue",
+        "scales": [0, 40, 30, 30, 0]
+    },
+    "shyvana":{
+        "main": "green",
+        "off": "blue",
+        "scales": [0, 65, 35, 0, 0]
+    },
+    "singed":{
+        "main": "green",
+        "off": "white",
+        "scales": [0, 50, 0, 50, 0]
+    },
+    "sion":{
+        "main": ["green", "blue"],
+        "off": "white",
+        "scales": [0, 30, 40, 30, 0]
+    },
+    "sivir":{
+        "main": "green",
+        "off": "white",
+        "scales": [0, 80, 0, 20, 0]
+    },
+    "skarner":{
+        "main": "green",
+        "off": null,
+        "scales": [0, 100, 0, 0, 0]
+    },
+    "sona":{
+        "main": "green",
+        "off": "blue",
+        "scales": [0, 80, 20, 0, 0]
+    },
+    "soraka":{
+        "main": "green",
+        "off": "white",
+        "scales": [0, 70, 0, 30, 0]
+    },
+    "swain":{
+        "main": "red",
+        "off": "green",
+        "scales": [70, 30, 0, 0, 0]
+    },
+    "sylas":{
+        "main": "red",
+        "off": "green",
+        "scales": [60, 40, 0, 0, 0]
+    },
+    "syndra":{
+        "main": ["red", "blue"],
+        "off": "green",
+        "scales": [40, 20, 40, 0, 0]
+    },
+    "tahmkench":{
+        "main": "white",
+        "off": "blue",
+        "scales": [0, 0, 30, 70, 0]
+    },
+    "taliyah":{
+        "main": "blue",
+        "off": "white",
+        "scales": [0, 0, 70, 30, 0]
+    },
+    "talon":{
+        "main": "red",
+        "off": "blue",
+        "scales": [70, 0, 30, 0, 0]
+    },
+    "taric":{
+        "main": "white",
+        "off": null,
+        "scales": [0, 0, 0, 100, 0]
+    },
+    "teemo":{
+        "main": "blue",
+        "off": "black",
+        "scales": [0, 0, 80, 0, 20]
+    },
+    "thresh":{
+        "main": "green",
+        "off": "red",
+        "scales": [20, 80, 0, 0, 0]
+    },
+    "tristana":{
+        "main": "green",
+        "off": "red",
+        "scales": [30, 70, 0, 0, 0]
+    },
+    "trundle":{
+        "main": ["green", "white"],
+        "off": "black",
+        "scales": [0, 60, 0, 20, 20]
+    },
+    "tryndamere":{
+        "main": ["red", "green"],
+        "off": "white",
+        "scales": [40, 40, 0, 20, 0]
+    },
+    "twistedfate":{
+        "main": "white",
+        "off": "blue",
+        "scales": [0, 0, 30, 70, 0]
+    },
+    "twitch":{
+        "main": "green",
+        "off": null,
+        "scales": [0, 100, 0, 0, 0]
+    },
+    "udyr":{
+        "main": "green",
+        "off": "white",
+        "scales": [0, 60, 0, 40, 0]
+    },
+    "urgot":{
+        "main": "red",
+        "off": "blue",
+        "scales": [60, 0, 40, 0, 0]
+    },
+    "varus":{
+        "main": "green",
+        "off": "white",
+        "scales": [0, 60, 0, 40, 0]
+    },
+    "vayne":{
+        "main": "green",
+        "off": null,
+        "scales": [0, 100, 0, 0, 0]
+    },
+    "veigar":{
+        "main": ["green", "blue"],
+        "off": ["black", "white"],
+        "scales": [0, 40, 30, 20, 10]
+    },
+    "velkoz":{
+        "main": "blue",
+        "off": "white",
+        "scales": [0, 80, 0, 20, 0]
+    },
+    "vi":{
+        "main": "red",
+        "off": "green",
+        "scales": [70, 30, 0, 0, 0]
+    },
+    "viktor":{
+        "main": "blue",
+        "off": "black",
+        "scales": [0, 0, 70, 0, 30]
+    },
+    "vladimir":{
+        "main": ["blue", "green"],
+        "off": "black",
+        "scales": [0, 40, 40, 0, 20]
+    },
+    "volibear":{
+        "main": "green",
+        "off": ["red", "white"],
+        "scales": [30, 60, 0, 10, 0]
+    },
+    "warwick":{
+        "main": "red",
+        "off": "green",
+        "scales": [80, 20, 0, 0, 0]
+    },
+    "wukong":{
+        "main": "green",
+        "off": "blue",
+        "scales": [0, 60, 40, 0, 0]
+    },
+    "xayah":{
+        "main": "green",
+        "off": "white",
+        "scales": [0, 70, 0, 30, 0]
+    },
+    "xerath":{
+        "main": "blue",
+        "off": null,
+        "scales": [0, 0, 100, 0, 0]
+    },
+    "xinzhao":{
+        "main": ["red", "white"],
+        "off": "blue",
+        "scales": [40, 0, 20, 40, 0]
+    },
+    "yasuo":{
+        "main": "white",
+        "off": "green",
+        "scales": [0, 20, 0, 80, 0]
+    },
+    "yorick":{
+        "main": "green",
+        "off": "black",
+        "scales": [0, 60, 0, 0, 40]
+    },
+    "yuumi":{
+        "main": "white",
+        "off": null,
+        "scales": [0, 0, 0, 100, 0]
+    },
+    "zac":{
+        "main": "green",
+        "off": "blue",
+        "scales": [0, 80, 20, 0, 0]
+    },
+    "zed":{
+        "main": "red",
+        "off": null,
+        "scales": [100, 0, 0, 0, 0]
+    },
+    "ziggs":{
+        "main": ["green", "blue"],
+        "off": null,
+        "scales": [0, 60, 40, 0, 0]
+    },
+    "zilean":{
+        "main": "blue",
+        "off": "white",
+        "scales": [0, 0, 60, 40, 0]
+    },
+    "zoe":{
+        "main": "red",
+        "off": "white",
+        "scales": [70, 0, 0, 30, 0]
+    },
+    "zyra":{
+        "main": ["blue", "white"],
+        "off": null,
+        "scales": [0, 0, 70, 30, 0]
     }
+
 }
