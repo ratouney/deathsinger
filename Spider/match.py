@@ -2,14 +2,17 @@ import logging
 from .regions import Region, Continents
 
 class Match:
-    def __init__(self, matchId, givenRegion = Continents.EUR, givenApi=None, load=False):
+    def __init__(self, matchId, givenRegion:Continents = Continents.EUR, givenApi = None, load:bool=False):
         self.matchId = matchId
         self.region = givenRegion
         self.api = givenApi
         self.rawData = None
-        logging.info(f'Creating match with {self.region.value}:{matchId}]')
+        logging.info(f'Creating match with [{self.region.value}:{matchId}]')
         if load:
             self.load()
+
+    def __repr__(self) -> str:
+        return f'[{self.region}:{self.matchId}]'
 
     def bind(self, givenApi):
         self.api = givenApi

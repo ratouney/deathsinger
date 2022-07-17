@@ -2,112 +2,134 @@
     "aatrox": {
         "main": "red",
         "off": "black",
-        "scales": [80, 0, 0, 0, 20]
+        "scales": [80, 0, 0, 0, 20],
+        "tags" : ["AD", "Bruiser", "Frontline", "Healing", "Splitpush"]
     },
     "ahri":{
         "main": ["red", "black"],
         "off": ["green"],
-        "scales": [60, 10, 0, 0, 30]
+        "scales": [60, 10, 0, 0, 30],
+        "tags": ["AP", "Mobile", "Assassin", "ShortRange", "SetupCC", "Reset"]
     },
     "akali":{
         "main": "red",
         "off": "blue",
-        "scales": [70, 0, 20, 0, 10]
+        "scales": [70, 0, 20, 0, 10],
+        "tags": ["AP", "Assassin", "Mobile", "Execute"]
     },
     "alistar":{
         "main": "red",
         "off": ["white", "green"],
-        "scales": [60, 20, 0, 20, 0]
+        "scales": [60, 20, 0, 20, 0],
+        "tags": ["AP", "Tank", "Support", "Peel", "Frontline", "SetupCC", "ShortRange"]
      },
     "amumu":{
         "main": ["blue", "green"],
         "off": ["white", "black"],
-        "scales": [0, 30, 40, 20, 10]
+        "scales": [0, 30, 40, 20, 10],
+        "tags": ["AP", "Tank", "Frontline", "SetupCC"]
     },
     "anivia":{
         "main": ["red", "blue"],
         "off": "white",
-        "scales": [50, 0, 30, 20, 0]
+        "scales": [50, 0, 30, 20, 0],
+        "tags": ["AP", "Control", "StandYourGround"]
     },
     "annie":{
         "main": ["red", "white"],
         "off": "blue",
-        "scales": [60, 0, 30, 10, 0]
+        "scales": [60, 0, 30, 10, 0],
+        "tags": ["AP", "Control", "ShortRange", "SetupCC"]
     },
     "aphelios":{
         "main": "blue",
         "off": "black",
-        "scales": [0, 0, 70, 0, 30]
+        "scales": [0, 0, 70, 0, 30],
+        "tags": ["AD", "StandYourGround", "DPS"]
     },
     "ashe":{
         "main": ["green", "blue", "black"],
         "off": ["red", "white"],
-        "scales": [10, 20, 50, 10, 20]
+        "scales": [10, 20, 50, 10, 20],
+        "tags": ["AD", "Poke", "Control", "Kite", "DPS"]
     },
     "aurelion sol":{
         "main": ["red", "green"],
         "off": ["white"],
-        "scales": [50, 20, 0, 30, 0]
+        "scales": [50, 20, 0, 30, 0],
+        "tags": ["AP", "Control", "Bruiser", "StandYourGround"]
     },
     "azir":{
         "main": "blue",
         "off": "red",
-        "scales": [30, 0, 70, 0, 0]
+        "scales": [30, 0, 70, 0, 0],
+        "tags": ["AP", "Poke", "StandYourGround"]
     },
     "bard":{
         "main": ["white", "green", "blue"],
         "off": "red",
-        "scales": [10, 20, 30, 50, 0]
+        "scales": [10, 20, 30, 50, 0],
+        "tags": ["AP", "Control", "Support", "SetupCC", "StandYourGround", "Peel"]
     },
     "blitzcrank":{
         "main": ["blue", "black"],
         "off": "white",
-        "scales": [0, 0, 30, 20, 50]
+        "scales": [0, 0, 30, 20, 50],
+        "tags": ["AP", "SetupCC", "Tank", "Support"]
     },
     "brand":{
         "main": "red",
         "off": ["green"],
-        "scales": [80, 20, 0, 0, 0]
+        "scales": [80, 20, 0, 0, 0],
+        "tags": ["AP", "DPS", "Support"]
     },
     "braum":{
         "main": ["blue", "white"],
         "off": ["red", "green"],
-        "scales": [10, 10, 50, 30, 0]
+        "scales": [10, 10, 50, 30, 0],
+        "tags": ["AP", "Support", "Tank", "SetupCC", "Peel"]
     },
     "caitlyn":{
         "main": ["blue", "green"],
         "off": "red",
-        "scales": [20, 30, 50, 0, 0]
+        "scales": [20, 30, 50, 0, 0],
+        "tags": ["AD", "DPS", "Control", "StandYourGround"]
     },
     "camille":{
         "main": "blue",
         "off": "black",
-        "scales": [0, 0, 60, 0, 40]
+        "scales": [0, 0, 60, 0, 40],
+        "tags": ["AD", "Engage", "SetupCC", "Bruiser", "Splitpush", "Execute"]
     },
     "cassiopeia":{
         "main": "green",
         "off": "blue",
-        "scales": [0, 60, 40, 0, 0]
+        "scales": [0, 60, 40, 0, 0],
+        "tags": ["AP", "Bruiser", "Control", "Kite", "StandYourGround", "SetupCC", "Ghost"]
     },
     "chogath":{
         "main": ["blue", "black"],
         "off": "green",
-        "scales": [0, 20, 50, 0, 30]
+        "scales": [0, 20, 50, 0, 30],
+        "tags": ["AP", "Tank", "Control", "SetupCC", "Execute"]
     },
     "corki":{
         "main": "green",
         "off": "black",
-        "scales": [0, 70, 0, 0, 30]
+        "scales": [0, 70, 0, 0, 30],
+        "tags": ["AP", "Poke", "Kite"]
     },
     "darius":{
         "main": "black",
         "off": "red",
-        "scales": [60, 0, 0, 0, 40]
+        "scales": [60, 0, 0, 0, 40],
+        "tags": ["AD", "Execute", "Bruiser", "Ghost", "Reset"]
     },
     "diana":{
         "main": ["green", "black"],
         "off": "white",
-        "scales": [0, 50, 0, 30, 20]
+        "scales": [0, 50, 0, 30, 20],
+        "tags": [""]
     },
     "dr mundo":{
         "main": ["black", "green"],
@@ -361,7 +383,7 @@
     },
     "missfortune":{
         "main": ["red", "white"],
-        "off": null,
+        "off": "blue",
         "scales": [20, 0, 20, 60, 0]
     },
     "mordekaiser":{

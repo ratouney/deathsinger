@@ -2,9 +2,17 @@ from distutils.log import debug
 import logging
 from enum import Enum
 
+from numpy import block
+
 class syncTypes(Enum):
     ALLOW_EMPTY = True
     NO_EMPTY = False
+
+class IDNotFound(Exception):
+    def __init__(self, blockType:str, id:str):
+        self.blockType = blockType
+        self.id = id
+        super().__init__(blockType, id)
 
 class Node:
     def __init__(self, blockType:str, id:str = None, link = None) -> None:
@@ -31,7 +39,7 @@ class Node:
     def setId(self, id:int):
         self.id = id
 
-    def sync(self, allowEmpty:syncTypes = syncTypes.ALLOW_EMPTY):
+    def sync(self, allowEmpty:syncTypes = syncTypes.ALLOW_EMPTY) -> bool:
         if self.connector == None or self.session == None:
             raise Exception("Node not connected")
         if self.id == None:
@@ -40,14 +48,18 @@ class Node:
             raise Exception("No type set on Node")
 
         l = self.blockType[0].lower()
-        q = f'MATCH ({l}:{self.blockType} {{id: {self.id}}}) RETURN {l}'
+        q = f'MATCH ({l}:{self.blockType} {{id: \'{self.id}\'}}) RETURN {l}'
 
         rt = self.connector.query(q)
         if len(rt) == 0:
             logging.debug(f'Node {self.blockType}:{self.id} is empty.')
             if allowEmpty == syncTypes.NO_EMPTY:
-                raise Exception("No corresponding node found {self.blockType}:{self.id}")
-                
+                raise IDNotFound(self.blockType, self.id)
+            else:
+                return False
+
+        # if len(rt) == 0:
+                # raise Exception("No corresponding node found {self.blockType}:{self.id}")
         self.data = rt[0][l]
         self.rawData = {}
         for k in self.data:
@@ -64,7 +76,7 @@ class Node:
     def set(self, **kwargs):
         if self.unitName == None or self.blockType == None:
             raise Exception("Block.name or Block.unitName not set, use setAttribute")
-        q = 'MATCH (' + self.unitName + ':' + self.blockType + ' {id:' + str(self.id) + '})\n'
+        q = 'MATCH (' + self.unitName + ':' + self.blockType + ' {id: \'' + str(self.id) + '\'})\n'
         prev = False
         for k in kwargs:
             if k == "id":
@@ -101,8 +113,8 @@ class Node:
         debugLine += otherNode.blockType + ':' + str(otherNode.id)
         print("Linking ==>", debugLine)
         # Using First and Second as unitname to avoid duplicates
-        f = 'MATCH (f:' + self.blockType + ' {id: ' + str(self.id) + '})\n'
-        s = 'MATCH (s:' + otherNode.blockType + ' {id: ' + str(otherNode.id) + '})\n'
+        f = 'MATCH (f:' + self.blockType + ' {id: \'' + str(self.id) + '\'})\n'
+        s = 'MATCH (s:' + otherNode.blockType + ' {id: \'' + str(otherNode.id) + '\'})\n'
 
         lName = label[0].lower()
         lseg = f'CREATE (f)-[{lName}:{label}]->(s)\n'
@@ -131,8 +143,8 @@ class Node:
         debugLine += otherNode.blockType + ':' + str(otherNode.id)
         print("Linking ==>", debugLine)
         # Using First and Second as unitname to avoid duplicates
-        f = 'MATCH (f:' + self.blockType + ' {id: ' + str(self.id) + '})\n'
-        s = 'MATCH (s:' + otherNode.blockType + ' {id: ' + str(otherNode.id) + '})\n'
+        f = 'MATCH (f:' + self.blockType + ' {id: \'' + str(self.id) + '\'})\n'
+        s = 'MATCH (s:' + otherNode.blockType + ' {id: \'' + str(otherNode.id) + '\'})\n'
         ulName = label[0].lower()
         lFind = f'MATCH (f)-[{ulName}:{label}]->(s)\n'
 

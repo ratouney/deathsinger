@@ -1,14 +1,8 @@
 import json
+import math
 import logging
-
-f = open("./champColorRatio.json", "r")
-
-data = json.load(f)
-
-teams = [
-    ["darius", "trundle", "leblanc", "sivir", "braum"],
-    ["ornn", "sejuani", "malzahar", "vayne", "taric"]
-]
+from PIL import Image
+from typing import List
 
 class TeamScale:
     def __init__(self, size:int = 5) -> None:
@@ -17,7 +11,6 @@ class TeamScale:
         self.size = size
         for k in range(0, size):
             self.defaultScale.append(0)
-        print("DefaultScale set to : ", self.defaultScale)
         self.scalesTotal = list(self.defaultScale)
 
     def addChamp(self, name:str):
@@ -89,18 +82,86 @@ class TeamScale:
             # Add the %'ed total of to that color
             decomposedWhiteScale[k] += whiteTotal * nonWhitePercentForColor
         decomposedWhiteScale[3] = 0
-        print("===", decomposedWhiteScale)
+        return decomposedWhiteScale
+
+class ColorScale:
+    def __init__(self, width:int=500, height:int=100) -> None:
+        self.width = width
+        self.height = height
+        self.im = Image.new('RGB', (width, height))
+        self.ld = self.im.load()
+
+    def gaussian(self, x, a, b, c, d=0):
+        return a * math.exp(-(x - b)**2 / (2 * c**2)) + d
+
+    def pixel(self, x, width=100, map=[], spread=1.5):
+        width = float(width)
+        r = sum([self.gaussian(x, p[1][0], p[0] * width, width/(spread*len(map))) for p in map])
+        g = sum([self.gaussian(x, p[1][1], p[0] * width, width/(spread*len(map))) for p in map])
+        b = sum([self.gaussian(x, p[1][2], p[0] * width, width/(spread*len(map))) for p in map])
+        return min(1.0, r), min(1.0, g), min(1.0, b)
+
+    def buildScale(self, ratios: List[int]):
+        print("Building with : ", ratios)
+        s = sum(ratios)
+        heatmap = []
+        # Adding red
+        p = 0
+        # Colors are : [factor, (R, G, B)]
+        red = [p, (1, 0, 0)]
+        p += ratios[0] / s
+        green = [p, (0, 1, 0)]
+        p += round(ratios[1] / s, 2) + 0.1
+        blue = [p, (0, 0, 1)]
+        p += round(ratios[2] / s, 2) + 0.1
+        white = [p, (.3, .3, .3)]
+        p += round(ratios[3] / s, 2) + 0.1
+        black = [p, (1, 1, 1)]
+        print("S : ", s)
+        print("Red : ", round(ratios[0] / s, 2))
+        print("Green : ", round(ratios[1] / s, 2))
+        print("Blue : ", round(ratios[2] / s, 2))
+        print("White : ", round(ratios[3] / s, 2))
+        print("Black : ", round(ratios[4] / s, 2))
+        heatmap = [red, blue, green, white, black]
+        print("Heatmap : ", heatmap)
+
+        for x in range(self.width):
+            r, g, b = self.pixel(x, width=self.width, map=heatmap, spread=1.3)
+            r, g, b = [int(256*v) for v in (r, g, b)]
+            for y in range(self.height):
+                self.ld[x, y] = r, g, b
+    
+    def output(self, filename:str = "grad.png"):
+        self.im.save(filename)
+
+
+f = open("./champColorRatio.json", "r")
+
+data = json.load(f)
+
+teams = [
+    ["renekton", "trundle", "leblanc", "draven", "taric"],
+    ["ornn", "sejuani", "malzahar", "vayne", "taric"]
+]
 
 t1 = TeamScale()
 for champ in teams[0]:
     t1.addChamp(champ)
-t2 = TeamScale()
-for champ in teams[1]:
-    t2.addChamp(champ)
+# t2 = TeamScale()
+# for champ in teams[1]:
+    # t2.addChamp(champ)
 
-print(t1.champs)
-print(t1.scalesTotal)
-print(t1.decomposeWhiteScale())
-print(t2.champs)
-print(t2.scalesTotal)
-print(t2.decomposeWhiteScale())
+g = ColorScale()
+g.buildScale(t1.scalesTotal)
+# g.buildScale(t1.decomposeWhiteScale())
+g.output("t1.png")
+
+# print(t1.champs)
+# print(t1.scalesTotal)
+# print(t1.weightedScale())
+# print(t1.decomposeWhiteScale())
+# print(t2.champs)
+# print(t2.scalesTotal)
+# print(t2.weightedScale())
+# print(t2.decomposeWhiteScale())

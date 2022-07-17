@@ -2,7 +2,7 @@ import logging
 from .regions import Region
 
 class Account:
-    def __init__(self, params, link = None, givenRegion = Region.EUW) -> None:
+    def __init__(self, params, link = None, givenRegion:Region = Region.EUW) -> None:
         print(params)
         if "status" in params:
             if 'status_code' in params['status'] != 200:
@@ -18,6 +18,9 @@ class Account:
         #self.name = params['name']
         self.profileIconId = params['profileIconId']
         self.summonerLevel = params['summonerLevel']
+
+    def __repr__(self) -> str:
+        return f'[{self.region}:{self.name}]'
 
     def getLastMatchIds(self, link = None):
         out = None

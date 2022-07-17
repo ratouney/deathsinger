@@ -1,19 +1,30 @@
 from neo4j import GraphDatabase, work
 from numpy import block
 
-from .node import Node
+from .node import Node, syncTypes
 from .block import Block
 import logging
 
 logging.basicConfig(level=logging.INFO)
 
+class NotConnected(Exception):
+    def __init__(self):
+        super().__init__()
+
 class Connector:
     def __init__(self, uri:str, user:str, password:str):
-        self.driver = GraphDatabase.driver(uri, auth=(user, password))
+        self.fail = False
+        try:
+            self.driver = GraphDatabase.driver(uri, auth=(user, password))
+        except Exception as e:
+            print("Error: ", e)
+            self.fail = True
 
     def query(self, query:str, raw:bool = False):
         # Raw keyword is useless for now, but might not be later
         logging.info(f'Running query from Connector --> {query}')
+        if self.fail:
+            raise NotConnected()
         s = self.driver.session()
         txn = s.begin_transaction()
         result = txn.run(query)
@@ -21,7 +32,6 @@ class Connector:
         rt = []
         for k in result:
             rt.append(k)
-        print("RECORD : ", rt)
         #results = [record for record in result.data()]
 
         txn.commit()
@@ -31,21 +41,24 @@ class Connector:
     def getSession(self):
         return self.driver.session()
 
-    def getBlock(self, blockType:str=None, preload:bool = True):
+    def getBlock(self, blockType:str=None, preload:bool = True) -> Block:
         return Block(blockType, self)
 
-    def getNode(self, blockType:str, id:int, preload:bool = True):
+    def getNode(self, blockType:str, id:int, preload:bool = True) -> Node:
         n = Node(blockType, id, self)
-        n.sync()
-        return n
+        if n.sync(syncTypes.ALLOW_EMPTY) == True:
+            return n
+        else:
+            return None
+        
 
-    def createNode(self, blockType:str, id:int, **kwargs):
+    def createNode(self, blockType:str, id:int, **kwargs) -> Node:
         unitName = blockType[0].lower()
-        q = 'CREATE (' + unitName + ':' + blockType + ' {id:' + str(id) + '})\n'
+        q = 'CREATE (' + unitName + ':' + blockType + ' {id: \'' + str(id) + '\'})\n'
         q += 'RETURN ' + unitName
 
         rt = self.query(q)
-        print("CreateNodeRT : ", rt)
+        logging.debug('CreateNodeRT : ', rt)
 
         if len(rt) > 0:
             n = Node(blockType, id, self)
@@ -56,16 +69,18 @@ class Connector:
         else:
             return None
 
-    def deleteNode(self, blockType:str, id:int, detach:bool = True):
+    def deleteNode(self, blockType:str, id:int, detach:bool = True) -> None:
         unitName = blockType[0].lower()
-        q = 'MATCH (' + unitName + ':' + blockType + ' {id:' + str(id) + '})\n'
+        q = f'MATCH ({unitName}:{blockType}' + ' {id: \"' + str(id) + '\"})\n'
         if detach:
-            q += 'DETACH DELETE {unitName}'
+            q += f'DETACH DELETE {unitName}\n'
         else:
-            q += 'DELETE {unitName}'
+            q += f'DELETE {unitName}\n'
         q += 'RETURN ' + unitName
 
         rt = self.query(q)
+
+        print("Deleted ? ", rt)
 
     def close(self):
         self.driver.close()
